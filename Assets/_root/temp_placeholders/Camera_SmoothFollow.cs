@@ -8,6 +8,27 @@ public class Camera_SmoothFollow : MonoBehaviour {
 
 	public float smoothSpeed;
 	public Vector3 offset;
+	public GameObject bg;
+	public float ImgX;
+	public float ImgY;
+	public float CenterX;
+	public float CenterY;
+	public Vector3 XRange_Start;
+	public Vector3 XRange_End;
+	public Vector3 YRange_Start;
+	public Vector3 YRange_End;
+
+	void Start()
+	{
+		ImgX = bg.GetComponent<SpriteRenderer> ().size.x * bg.transform.localScale.x;
+		ImgY = bg.GetComponent<SpriteRenderer> ().size.y * bg.transform.localScale.y;
+		CenterX = bg.transform.position.x;
+		CenterY = bg.transform.position.y;
+		XRange_Start = new Vector3 ((CenterX - (ImgX / 2)), CenterY, 2);
+		XRange_End = new Vector3 ((CenterX + (ImgX / 2)), CenterY, 2);
+		YRange_Start = new Vector3 (CenterX, (CenterY - (ImgY / 2)), 2);
+		YRange_End = new Vector3 (CenterX, (CenterY + (ImgY / 2)), 2);
+	}
 
 	void FixedUpdate()
 	{
