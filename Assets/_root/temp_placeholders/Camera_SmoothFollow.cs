@@ -17,6 +17,8 @@ public class Camera_SmoothFollow : MonoBehaviour {
 	public Vector3 XRange_End;
 	public Vector3 YRange_Start;
 	public Vector3 YRange_End;
+	public float Threshold;
+	public bool followAll;
 
 	void Start()
 	{
@@ -33,16 +35,27 @@ public class Camera_SmoothFollow : MonoBehaviour {
 	void FixedUpdate()
 	{
 		Vector3 finalPos = target.transform.position + offset;
-		Vector3 smoothedPos = Vector3.Lerp (transform.position, finalPos, smoothSpeed*Time.deltaTime);
-		if (finalPos.y <= 10)
+
+		if (target.transform.position.y > Threshold && !followAll)
 		{
-			Vector3 currentPos = new Vector3 (smoothedPos.x, finalPos.y, finalPos.z);
-			transform.position = currentPos;
+			followAll = true;
 		}
-		if (finalPos.y > 10)
+		if (followAll)
 		{
-			Vector3 currentPos = new Vector3 (smoothedPos.x, smoothedPos.y, finalPos.z);
-			transform.position = currentPos;
+			Vector3 smoothedPos = Vector3.Lerp (transform.position, finalPos, smoothSpeed * Time.deltaTime);
+			transform.position = finalPos;
+
+			if (target.transform.position.y < Threshold && target.GetComponent<Temp_Movement>().canJump && (Mathf.Abs(transform.position.y - smoothedPos.y)) < 0.1f)
+			{
+				followAll = false;
+			}
 		}
+		else
+		{
+			Vector3 smoothedPos = Vector3.Lerp (transform.position, finalPos, smoothSpeed * Time.deltaTime);
+			transform.position = new Vector3 (smoothedPos.x, transform.position.y, finalPos.z);
+		}
+
+		Debug.DrawLine (new Vector3 (XRange_Start.x, Threshold, 0), new Vector3 (XRange_End.x, Threshold, 0), Color.red);
 	}
 }
