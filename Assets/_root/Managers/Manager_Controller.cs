@@ -15,9 +15,10 @@ namespace TAAI
 		[SerializeField]
 		private float Speed;
 
-		public float MutliplicadorSalto;
+
+
 		public float PotenciaSalto;
-		public float MutliplicadorCaida;
+		public float PotenciaCaida;
 
 		void Awake()
 		{
@@ -29,13 +30,27 @@ namespace TAAI
 
 		public void MoveCharacter(float _x, float _y)
 		{
-			Principal_PJ.transform.Translate (new Vector3 (_x, _y, 0.0f) * Time.deltaTime * Speed, Space.World);
+			
+			Principal_PJ.gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (_x * Speed,
+				Principal_PJ.gameObject.GetComponent<Rigidbody2D> ().velocity.y);
+			//Principal_PJ.transform.Translate (new Vector3 (_x, _y, 0.0f) * Time.deltaTime * Speed, Space.World);
 		}
 
 		public void JumpCharacter()
 		{
 			if (Physics2D.OverlapPoint (GOSalto.position)) {
 				Principal_PJ.GetComponent <Rigidbody2D> ().velocity = Vector2.up * PotenciaSalto;
+			}
+		}
+
+		public void SmashCharacter(){
+			Principal_PJ.GetComponent <Rigidbody2D> ().velocity = Vector2.down * PotenciaCaida;
+		}
+
+		public void ResetPosition()
+		{
+			if (Physics2D.OverlapPoint (GOSalto.position)) {
+				Principal_PJ.gameObject.GetComponent<Rigidbody2D> ().velocity = Vector2.zero;
 			}
 		}
 	}
