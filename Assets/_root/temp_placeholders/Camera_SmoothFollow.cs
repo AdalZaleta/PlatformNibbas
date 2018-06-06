@@ -5,28 +5,23 @@ using UnityEngine;
 public class Camera_SmoothFollow : MonoBehaviour {
 
 	public GameObject target;
-	public GameObject vision;
-
+	public Camera cam;
 	public float smoothSpeed;
 	public Vector3 offset;
 	public GameObject bg;
-	public float ImgX;
-	public float ImgY;
-	public float CenterX;
-	public float CenterY;
-	public float Threshold;
+
+	float ImgX;
+	float ImgY;
+	float CenterX;
+	float CenterY;
+	float Threshold;
 	bool followAll;
-	public bool stopXmin;
-	public bool stopXmax;
-	public bool stopYmin;
-	public bool stopYmax;
-	public Camera cam;
-	public float CamX;
-	public float CamY;
-	public Vector2 camXlim;
-	public Vector2 camYlim;
-	public Vector2 bgXlim;
-	public Vector2 bgYlim;
+	float CamX;
+	float CamY;
+	Vector2 camXlim;
+	Vector2 camYlim;
+	Vector2 bgXlim;
+	Vector2 bgYlim;
 
 	void Start()
 	{
@@ -51,29 +46,29 @@ public class Camera_SmoothFollow : MonoBehaviour {
 		camYlim.x = transform.position.y - CamY / 2;
 		camYlim.y = transform.position.y + CamY / 2;
 
-		Vector3 finalPos = vision.transform.position + offset;
+		Vector3 finalPos = target.transform.position + offset;
 
 		if (camXlim.x <= bgXlim.x)
 		{
-			if (vision.transform.position.x < transform.position.x)
+			if (target.transform.position.x < transform.position.x)
 				finalPos.x = transform.position.x;
 		}
 
 		if (camXlim.y >= bgXlim.y)
 		{
-			if (vision.transform.position.x > transform.position.x)
+			if (target.transform.position.x > transform.position.x)
 				finalPos.x = transform.position.x;
 		}
 
 		if (camYlim.x <= bgYlim.x)
 		{
-			if (vision.transform.position.y < transform.position.y)
+			if (target.transform.position.y < transform.position.y)
 				finalPos.y = transform.position.y;
 		}
 
 		if (camYlim.y >= bgYlim.y)
 		{
-			if (vision.transform.position.y > transform.position.y)
+			if (target.transform.position.y > transform.position.y)
 				finalPos.y = transform.position.y;
 		}
 
@@ -84,20 +79,17 @@ public class Camera_SmoothFollow : MonoBehaviour {
 		if (followAll)
 		{
 			Vector3 smoothedPos = Vector3.Lerp (transform.position, finalPos, smoothSpeed * Time.deltaTime);
-			transform.position = finalPos;
+			transform.position = new Vector3 (smoothedPos.x, smoothedPos.y, finalPos.z);
 
-			if ((target.transform.position.y < Threshold && (Mathf.Abs(transform.position.y - smoothedPos.y)) < 0.1f) /*|| (target.transform.position.y < Threshold && camYlim.x <= bgYlim.x && (Mathf.Abs(transform.position.y - smoothedPos.y)) < 0.1f)*/)
+			if ((target.transform.position.y < Threshold && (Mathf.Abs(transform.position.y - smoothedPos.y)) < 0.1f && camYlim.x <= bgYlim.x) /*|| (target.transform.position.y < Threshold && camYlim.x <= bgYlim.x && (Mathf.Abs(transform.position.y - smoothedPos.y)) < 0.1f)*/)
 			{
 				followAll = false;
 			}
 		}
 		else
 		{
-			if (!stopXmin && !stopXmax)
-			{
-				Vector3 smoothedPos = Vector3.Lerp (transform.position, finalPos, smoothSpeed * Time.deltaTime);
-				transform.position = new Vector3 (smoothedPos.x, transform.position.y, finalPos.z);
-			}
+			Vector3 smoothedPos = Vector3.Lerp (transform.position, finalPos, smoothSpeed * Time.deltaTime);
+			transform.position = new Vector3 (smoothedPos.x, transform.position.y, finalPos.z);
 		}
 
 		Debug.DrawLine (new Vector3 (bgXlim.x, transform.position.y, transform.position.z), new Vector3 (bgXlim.y, transform.position.y, transform.position.z), Color.red);
