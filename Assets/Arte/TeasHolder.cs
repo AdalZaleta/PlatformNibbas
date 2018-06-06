@@ -9,6 +9,9 @@ namespace TAAI
 		public Sprite[] cosos;
 		public SpriteRenderer who;
 		public Rigidbody2D what;
+		public Transform Watch;
+
+		public Vector3 PosWacher = new Vector3(2.5f, 0.0f, 0.0f);
 
 
 		void Update()
@@ -23,9 +26,11 @@ namespace TAAI
 				who.sprite = cosos [1];
 			}
 			if (what.velocity.x < 0) {
+				Watch.transform.localPosition = -PosWacher;
 				who.flipX = true;
 			}
 			if (what.velocity.x > 0) {
+				Watch.transform.localPosition = PosWacher;
 				who.flipX = false;
 			}
 		}
