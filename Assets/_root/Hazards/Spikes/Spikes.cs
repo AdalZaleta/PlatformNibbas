@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Spikes : MonoBehaviour {
 
-	public float dmg;
-
 	void OnCollisionEnter(Collision _col)
 	{
 		if (_col.gameObject.CompareTag("Player"))
 		{
-			_col.gameObject.SendMessage ("receiveDamage", dmg, SendMessageOptions.DontRequireReceiver);
+			Debug.Log ("Trigger Player Death");
+			_col.gameObject.SendMessage ("Death", SendMessageOptions.DontRequireReceiver);
 		}
 	}
 }
