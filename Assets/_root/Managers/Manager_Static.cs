@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 namespace TAAI
 {
 	public enum AppState
@@ -26,5 +25,6 @@ namespace TAAI
 		public static Manager_App appManager;
 		public static Manager_Controller controllerManager;
 		public static Manager_Scene sceneManager;
+		public static Manager_Locks locksManager;
 	}
 }

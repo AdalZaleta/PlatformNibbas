@@ -37,6 +37,11 @@ namespace TAAI
 			if (Manager_Static.appManager.currentState == AppState.end_game) {
 			}
 		}
-			
+
+		public delegate void InputTemplate (int _id);
+
+		public InputTemplate AchievementHandler;
+		public InputTemplate DecalChangeHandler;
+		public InputTemplate DecalHandler;
 	}
 }

@@ -7,11 +7,11 @@ namespace TAAI
 	public class Camera_SmoothFollow : MonoBehaviour {
 
 		public GameObject target;
-		public Camera cam;
 		public float smoothSpeed;
-		public Vector3 offset;
 		public float Y_Threshold;
 		public GameObject bg;
+		Vector3 offset;
+		Camera cam;
 
 		float ImgX;
 		float ImgY;
@@ -27,6 +27,8 @@ namespace TAAI
 
 		void Start()
 		{
+			cam = GetComponent<Camera> ();
+			offset = new Vector3 (0, 0, -10);
 			ImgX = bg.GetComponent<SpriteRenderer> ().size.x * bg.transform.localScale.x;
 			ImgY = bg.GetComponent<SpriteRenderer> ().size.y * bg.transform.localScale.y;
 			CenterX = bg.transform.position.x;
