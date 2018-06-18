@@ -21,6 +21,8 @@ namespace TAAI
 
 		public float valueOfTime;
 		public float distanceShoot;
+		public float DurationShoot;
+		public float LenghtShoot;
 
 		public bool canAtack = true;
 
@@ -71,7 +73,7 @@ namespace TAAI
 			if (canAtack) 
 			{
 				Debug.Log ("Input Ataque");
-				StartCoroutine (Trow (4.0f));
+				StartCoroutine (Trow (DurationShoot));
 			}
 			else
 			{
@@ -95,7 +97,7 @@ namespace TAAI
 			while (Time.time < (currentTime + _duration)) {
 				valueOfTime = Mathf.InverseLerp (currentTime, currentTime + _duration, Time.time);	
 				distanceShoot = Principal_PJ.GetComponent<TeasHolder> ().curvaDeLanzar.Evaluate (valueOfTime);
-				distanceShoot *= 5;
+				distanceShoot *= LenghtShoot;
 				hitInfo = Physics2D.Raycast (Principal_PJ.transform.position, Principal_PJ.transform.right, distanceShoot, layer);
 				if (hitInfo) {
 					Debug.DrawLine (Principal_PJ.transform.position, hitInfo.point, Color.green);

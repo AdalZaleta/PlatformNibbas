@@ -237,6 +237,8 @@ MonoBehaviour:
   originJump: {x: 0, y: 0, z: 0}
   valueOfTime: 0
   distanceShoot: 0
+  DurationShoot: 2
+  LenghtShoot: 8
   canAtack: 1
   PotenciaSalto: 8
   PotenciaCaida: 16
@@ -828,17 +830,29 @@ MonoBehaviour:
       outSlope: 1
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.75003994
-      value: 1.0058731
-      inSlope: -0.005053718
-      outSlope: -0.005053718
+      time: 0.1
+      value: 0.9
+      inSlope: 3.899111
+      outSlope: 1.5910368
+      tangentMode: 1
+    - serializedVersion: 2
+      time: 0.25
+      value: 1
+      inSlope: -0.004043975
+      outSlope: -0.004043975
       tangentMode: 0
     - serializedVersion: 2
-      time: 1.0000353
-      value: -0.0027829483
-      inSlope: -9.3866625
+      time: 0.4
+      value: 0.9
+      inSlope: -2.067171
+      outSlope: -0.5883024
+      tangentMode: 1
+    - serializedVersion: 2
+      time: 0.5
+      value: 0
+      inSlope: -0.13358144
       outSlope: -9.3866625
-      tangentMode: 0
+      tangentMode: 1
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
