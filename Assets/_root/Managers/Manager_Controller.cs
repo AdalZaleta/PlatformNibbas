@@ -22,7 +22,7 @@ namespace TAAI
 		public float valueOfTime;
 		public float distanceShoot;
 
-		public bool Atack = true;
+		public bool canAtack = true;
 
 		private RaycastHit2D hitInfo;
 
@@ -68,7 +68,7 @@ namespace TAAI
 
 		public void AtackCharacter()
 		{
-			if (Atack) 
+			if (canAtack) 
 			{
 				Debug.Log ("Input Ataque");
 				StartCoroutine (Trow (4.0f));
@@ -89,7 +89,7 @@ namespace TAAI
 		IEnumerator Trow(float _duration)
 		{
 			Debug.Log ("Entre a la corrutina");
-			Atack = false;
+			canAtack = false;
 			float currentTime = Time.time;
 
 			while (Time.time < (currentTime + _duration)) {
@@ -105,7 +105,7 @@ namespace TAAI
 				ob.transform.position = Principal_PJ.transform.position + Principal_PJ.transform.right * distanceShoot;
 				yield return null;
 			}
-			Atack = true;
+			canAtack = true;
 			Debug.Log ("Sale de la corrutina");
 		}
 	}
