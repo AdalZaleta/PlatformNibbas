@@ -16,7 +16,6 @@ namespace TAAI
 		private float Speed;
 		[SerializeField]
 		private LayerMask layer;
-		[SerializeField]
 		private Vector3 originJump;
 
 		public float valueOfTime;
@@ -98,13 +97,13 @@ namespace TAAI
 				valueOfTime = Mathf.InverseLerp (currentTime, currentTime + _duration, Time.time);	
 				distanceShoot = Principal_PJ.GetComponent<TeasHolder> ().curvaDeLanzar.Evaluate (valueOfTime);
 				distanceShoot *= LenghtShoot;
-				hitInfo = Physics2D.Raycast (Principal_PJ.transform.position, Principal_PJ.transform.right, distanceShoot, layer);
+				hitInfo = Physics2D.Raycast (Principal_PJ.transform.position, Principal_PJ.GetComponent<TeasHolder>().Watch.localPosition, distanceShoot, layer);
 				if (hitInfo) {
 					Debug.DrawLine (Principal_PJ.transform.position, hitInfo.point, Color.green);
 				} else {
-					Debug.DrawRay (Principal_PJ.transform.position, Principal_PJ.transform.right*distanceShoot, Color.blue);
+					Debug.DrawRay (Principal_PJ.transform.position, Principal_PJ.GetComponent<TeasHolder>().Watch.localPosition*distanceShoot, Color.blue);
 				}
-				ob.transform.position = Principal_PJ.transform.position + Principal_PJ.transform.right * distanceShoot;
+				ob.transform.position = Principal_PJ.transform.position + Principal_PJ.GetComponent<TeasHolder>().Watch.localPosition * distanceShoot;
 				yield return null;
 			}
 			canAtack = true;
