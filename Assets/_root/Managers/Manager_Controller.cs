@@ -63,7 +63,7 @@ namespace TAAI
 
 		public void ResetPosition()
 		{
-			if (Physics2D.OverlapPoint (GOSalto.position)) {
+			if (Physics2D.OverlapPoint (GOSalto.position,layer)) {
 				Principal_PJ.gameObject.GetComponent<Rigidbody2D> ().velocity = Vector2.zero;
 			}
 		}
