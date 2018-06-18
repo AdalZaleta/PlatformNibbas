@@ -146,8 +146,16 @@ MonoBehaviour:
   Principal_PJ: {fileID: 1893605482}
   GOSalto: {fileID: 972523458}
   Speed: 10
+  layer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  originJump: {x: 0, y: 0, z: 0}
+  valueOfTime: 0
+  distanceShoot: 0
+  Atack: 1
   PotenciaSalto: 8
   PotenciaCaida: 16
+  ob: {fileID: 1162638635}
 --- !u!114 &613766389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,11 +388,39 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 972523457}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2, y: -1.15, z: 0}
+  m_LocalPosition: {x: -0.1, y: -1.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1893605486}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1162638634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1162638635}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 571167235653111936, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1162638635
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1162638634}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.69, y: -0.97, z: 0.012879949}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1255311746
 GameObject:
@@ -692,4 +728,32 @@ MonoBehaviour:
   who: {fileID: 1893605485}
   what: {fileID: 1893605484}
   Watch: {fileID: 1358599461}
+  offsetMusic:
+  - {x: -0.5, y: 1.3, z: 0}
+  - {x: 0, y: 1.5, z: 0}
+  - {x: 0.5, y: 1.3, z: 0}
   PosWacher: {x: 2.5, y: 0, z: 0}
+  curvaDeLanzar:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: -0.0002937317
+      value: 0.0020751953
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.75003994
+      value: 1.0058731
+      inSlope: -0.005053718
+      outSlope: -0.005053718
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1.0000353
+      value: -0.0027829483
+      inSlope: -9.3866625
+      outSlope: -9.3866625
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0

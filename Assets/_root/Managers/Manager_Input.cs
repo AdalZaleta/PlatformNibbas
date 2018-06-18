@@ -30,6 +30,9 @@ namespace TAAI
 				if (Input.GetButton ("Fire1")) {
 					Manager_Static.controllerManager.JumpCharacter ();
 				}
+				if (Input.GetButtonDown ("Fire3")) {
+					Manager_Static.controllerManager.AtackCharacter ();
+				}
 				if (Input.GetAxisRaw ("Horizontal") == 0.0f && !Input.GetButton ("Fire1")) {
 					Manager_Static.controllerManager.ResetPosition ();
 				}

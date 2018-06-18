@@ -11,7 +11,9 @@ namespace TAAI
 		public Rigidbody2D what;
 		public Transform Watch;
 
+		public Vector3[] offsetMusic;
 		public Vector3 PosWacher = new Vector3(2.5f, 0.0f, 0.0f);
+		public AnimationCurve curvaDeLanzar;
 
 
 		void Update()
@@ -32,6 +34,9 @@ namespace TAAI
 			if (what.velocity.x > 0) {
 				Watch.transform.localPosition = PosWacher;
 				who.flipX = false;
+			}
+			for (int i = 0; i < offsetMusic.Length; i++) {
+				Debug.DrawRay (transform.position, offsetMusic [i], Color.red);
 			}
 		}
 	}
