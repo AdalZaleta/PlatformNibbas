@@ -99,23 +99,24 @@ namespace TAAI
 			canAtack = false;
 			float currentTime = Time.time;
 			Vector3 positionShoot = Principal_PJ.transform.position;
+			Vector3 currentShootDirection = shootDirection;
 
 			while (Time.time < (currentTime + _duration)) {
 				valueOfTime = Mathf.InverseLerp (currentTime, currentTime + _duration, Time.time);	
 				distanceShoot = Principal_PJ.GetComponent<TeasHolder> ().curvaDeLanzar.Evaluate (valueOfTime);
 				distanceShoot *= LenghtShoot;
-				hitInfo = Physics2D.Raycast (positionShoot, shootDirection, distanceShoot, layer);
+				hitInfo = Physics2D.Raycast (positionShoot, currentShootDirection, distanceShoot, layer);
 				if (hitInfo) {
 					Debug.DrawLine (positionShoot, hitInfo.point, Color.green);
 				} else {
-					Debug.DrawRay (positionShoot, shootDirection, Color.blue);
+					Debug.DrawRay (positionShoot, currentShootDirection, Color.blue);
 				}
-				Weapon.position = positionShoot + shootDirection * distanceShoot;
+				Weapon.position = positionShoot + currentShootDirection * distanceShoot;
 				tepPosArma = Weapon.position;
 				yield return null;
+				Weapon.localPosition = Vector3.zero;
 			}
 			canAtack = true;
-			Weapon.position = new Vector3 (0, 0, 0);
 			Debug.Log ("Sale de la corrutina");
 		}
 	}
