@@ -39,5 +39,18 @@ namespace TAAI
 				Debug.DrawRay (transform.position, offsetMusic [i], Color.red);
 			}
 		}
+
+		public void AtackCharacter()
+		{
+			if (canAtack) 
+			{
+				Debug.Log ("Input Ataque");
+				StartCoroutine (Trow (DurationShoot));
+			}
+			else
+			{
+				Debug.Log ("Ya esta atacando, Ignora Input");
+			}
+		}
 	}
 }

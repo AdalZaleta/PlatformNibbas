@@ -17,6 +17,13 @@ namespace TAAI
 		[SerializeField]
 		private LayerMask layer;
 		private Vector3 originJump;
+		[SerializeField]
+		private Vector3 shootDirection;
+		[SerializeField]
+		private Transform Weapon;
+
+		public Vector3 tepPosArma;
+
 
 		public float valueOfTime;
 		public float distanceShoot;
@@ -35,7 +42,7 @@ namespace TAAI
 		{
 			Manager_Static.controllerManager = this;
 			Principal_PJ = GameObject.FindGameObjectWithTag ("Player");
-			//GOSalto = Principal_PJ.GetComponentsInChildren<Transform> ();
+			GOSalto = Principal_PJ.GetComponentInChildren<Transform> ().GetChild (0);
 		}
 
 
@@ -43,7 +50,8 @@ namespace TAAI
 		{
 			Principal_PJ.gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (_x * Speed,
 				Principal_PJ.gameObject.GetComponent<Rigidbody2D> ().velocity.y);
-			//Principal_PJ.transform.Translate (new Vector3 (_x, _y, 0.0f) * Time.deltaTime * Speed, Space.World);
+			shootDirection = new Vector3 (1, 0, 0) * (Mathf.Abs (_x) / _x);
+			Debug.Log ("Valor de shootDirection: " + shootDirection);
 		}
 
 		public void JumpCharacter()
@@ -85,26 +93,28 @@ namespace TAAI
 			
 		}
 
-		public Transform ob;
-
 		IEnumerator Trow(float _duration)
 		{
 			Debug.Log ("Entre a la corrutina");
 			canAtack = false;
 			float currentTime = Time.time;
+			Vector3 positionShoot = Principal_PJ.transform.position;
+			Vector3 currentShootDirection = shootDirection;
 
 			while (Time.time < (currentTime + _duration)) {
 				valueOfTime = Mathf.InverseLerp (currentTime, currentTime + _duration, Time.time);	
 				distanceShoot = Principal_PJ.GetComponent<TeasHolder> ().curvaDeLanzar.Evaluate (valueOfTime);
 				distanceShoot *= LenghtShoot;
-				hitInfo = Physics2D.Raycast (Principal_PJ.transform.position, Principal_PJ.GetComponent<TeasHolder>().Watch.localPosition, distanceShoot, layer);
+				hitInfo = Physics2D.Raycast (positionShoot, currentShootDirection, distanceShoot, layer);
 				if (hitInfo) {
-					Debug.DrawLine (Principal_PJ.transform.position, hitInfo.point, Color.green);
+					Debug.DrawLine (positionShoot, hitInfo.point, Color.green);
 				} else {
-					Debug.DrawRay (Principal_PJ.transform.position, Principal_PJ.GetComponent<TeasHolder>().Watch.localPosition*distanceShoot, Color.blue);
+					Debug.DrawRay (positionShoot, currentShootDirection, Color.blue);
 				}
-				ob.transform.position = Principal_PJ.transform.position + Principal_PJ.GetComponent<TeasHolder>().Watch.localPosition * distanceShoot;
+				Weapon.position = positionShoot + currentShootDirection * distanceShoot;
+				tepPosArma = Weapon.position;
 				yield return null;
+				Weapon.localPosition = Vector3.zero;
 			}
 			canAtack = true;
 			Debug.Log ("Sale de la corrutina");
