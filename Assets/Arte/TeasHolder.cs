@@ -40,6 +40,7 @@ namespace TAAI
 			}
 		}
 
+		/*
 		public void AtackCharacter()
 		{
 			if (canAtack) 
@@ -51,6 +52,6 @@ namespace TAAI
 			{
 				Debug.Log ("Ya esta atacando, Ignora Input");
 			}
-		}
+		}*/
 	}
 }

@@ -65,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1364040997575446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.05, y: -0.51, z: 0}
+  m_LocalPosition: {x: 20.69, y: -0.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4065275908755268}
@@ -80,7 +80,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1364040997575446}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: cda25c22bdbf1d0448c37bfa3e3950d5, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -95,7 +95,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1431960273015450}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: cda25c22bdbf1d0448c37bfa3e3950d5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keys:
-  - key_0
   - key_1
+  - key_2
   locks: 0000
   door: {fileID: 1431960273015450}
 --- !u!212 &212608657135296426

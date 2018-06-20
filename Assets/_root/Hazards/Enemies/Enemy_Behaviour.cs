@@ -19,6 +19,8 @@ public class Enemy_Behaviour : MonoBehaviour {
 	Rigidbody2D rig;
 	Vector3 startingPosition;
 
+	float spr_w;
+
 	bool coolDown;
 
 	void Start()
@@ -27,6 +29,8 @@ public class Enemy_Behaviour : MonoBehaviour {
 		startingPosition = transform.position - new Vector3((distance / 2), (distance / 2), transform.position.z);
 		Debug.Log ("Starting Pos: " + startingPosition);
 		Debug.Log ("Final Pos(x): " + (startingPosition.x + distance));
+
+		spr_w = sprite.gameObject.GetComponent<SpriteRenderer> ().sprite.bounds.size.x * sprite.transform.localScale.x;
 	}
 
 	void OnCollisionEnter(Collision _col)
@@ -54,13 +58,14 @@ public class Enemy_Behaviour : MonoBehaviour {
 		case 2:
 			break;
 		}
-
 	}
 
 	void FixedUpdate()
 	{
 		RaycastHit2D hitA;
 		RaycastHit2D hitB;
+		RaycastHit2D floorCheckL;
+		RaycastHit2D floorCheckR;
 		switch ((int)type)
 		{
 		case 0:
@@ -79,6 +84,20 @@ public class Enemy_Behaviour : MonoBehaviour {
 				hitB = Physics2D.Raycast (transform.position, Vector2.left, 1.0f, layerMask);
 				if (hitB.collider != null){
 					Debug.DrawRay (transform.position, transform.TransformDirection (Vector3.left) * hitB.distance, Color.red);
+					StartCoroutine (flip ());
+				}
+				floorCheckL = Physics2D.Raycast (transform.position + new Vector3 (-(spr_w/2), 0, 0), Vector2.down, 1.0f, layerMask);
+				if (floorCheckL.collider == null)
+				{
+					Debug.Log ("A la madre una orilla");
+					Debug.DrawRay (transform.position + new Vector3 (-(spr_w / 2), 0, 0), transform.TransformDirection (Vector3.down) * 1.0f, Color.green);
+					StartCoroutine (flip ());
+				}
+				floorCheckR = Physics2D.Raycast (transform.position + new Vector3 ((spr_w/2), 0, 0), Vector2.down, 1.0f, layerMask);
+				if (floorCheckR.collider == null)
+				{
+					Debug.Log ("A la madre una orilla");
+					Debug.DrawRay (transform.position + new Vector3 ((spr_w / 2), 0, 0), transform.TransformDirection (Vector3.down) * 1.0f, Color.green);
 					StartCoroutine (flip ());
 				}
 				Debug.DrawRay (transform.position, transform.TransformDirection (Vector3.right) * 1.0f, Color.green);
