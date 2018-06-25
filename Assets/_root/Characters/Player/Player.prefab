@@ -260,6 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4625c052c9d238d45934980e03084a8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canAtack: 1
   cosos:
   - {fileID: 21300000, guid: 841e36b8c7bb08a44aa5e8dcb8c1adfa, type: 3}
   - {fileID: 21300000, guid: 11802a7429509ee419d63edbb3deba7e, type: 3}
@@ -267,6 +268,17 @@ MonoBehaviour:
   who: {fileID: 212279100495366068}
   what: {fileID: 50998780307696304}
   Watch: {fileID: 4440869598615540}
+  GOSalto: {fileID: 4994928067526690}
+  Health: 5
+  layerJump:
+    serializedVersion: 2
+    m_Bits: 256
+  layerCanAtack:
+    serializedVersion: 2
+    m_Bits: 1024
+  Speed: 8
+  shootDirection: {x: 0, y: 0, z: 0}
+  Weapon: {fileID: 4534053613389594}
   offsetMusic:
   - {x: -0.5, y: 1.3, z: 0}
   - {x: 0, y: 1.5, z: 0}
@@ -308,6 +320,12 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+  PotenciaSalto: 8
+  PotenciaCaida: 16
+  valueOfTime: 0
+  distanceShoot: 3
+  DurationShoot: 1
+  LenghtShoot: 0
 --- !u!114 &114455546615827374
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -200,8 +200,8 @@ GameObject:
   - component: {fileID: 613766391}
   - component: {fileID: 613766390}
   - component: {fileID: 613766389}
-  - component: {fileID: 613766388}
   - component: {fileID: 613766393}
+  - component: {fileID: 613766388}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -221,21 +221,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Principal_PJ: {fileID: 0}
-  GOSalto: {fileID: 0}
-  Speed: 10
-  layer:
-    serializedVersion: 2
-    m_Bits: 256
-  shootDirection: {x: 0, y: 0, z: 0}
-  Weapon: {fileID: 0}
-  tepPosArma: {x: 0, y: 0, z: 0}
-  valueOfTime: 0
-  distanceShoot: 0
-  DurationShoot: 2
-  LenghtShoot: 8
-  canAtack: 1
-  PotenciaSalto: 10
-  PotenciaCaida: 20
 --- !u!114 &613766389
 MonoBehaviour:
   m_ObjectHideFlags: 0

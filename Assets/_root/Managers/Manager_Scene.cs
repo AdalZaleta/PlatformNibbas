@@ -21,5 +21,10 @@ namespace TAAI
 			if (!_isAditive)
 				SceneManager.LoadScene (_id);
 		}
+
+		public void LoadSceneName(string _name)
+		{
+			SceneManager.LoadScene (_name);
+		}
 	}
 }
