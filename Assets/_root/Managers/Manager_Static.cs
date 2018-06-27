@@ -26,5 +26,6 @@ namespace TAAI
 		public static Manager_Controller controllerManager;
 		public static Manager_Scene sceneManager;
 		public static Manager_Locks locksManager;
+		public static Manager_Animator animatorManager;
 	}
 }
