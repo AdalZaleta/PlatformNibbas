@@ -4,9 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - floor
-  - camFix
-  - camFocus
   - watcher
   layers:
   - Default
@@ -17,9 +14,9 @@ TagManager:
   - UI
   - 
   - 
-  - Map
-  - Characters
-  - Enemies
+  - 
+  - 
+  - 
   - 
   - 
   - 

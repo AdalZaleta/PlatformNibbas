@@ -55,7 +55,7 @@ namespace TAAI
 
 		void Start()
 		{
-			
+
 			offset = new Vector3 (0, 0, -10);
 			ImgX = bg.GetComponent<SpriteRenderer> ().size.x * bg.transform.localScale.x;
 			ImgY = bg.GetComponent<SpriteRenderer> ().size.y * bg.transform.localScale.y;
