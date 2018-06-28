@@ -35,12 +35,13 @@ namespace TAAI
 					Manager_Static.controllerManager.AtackCharacter ();
 				}
 				if (Input.GetButtonDown ("Fire3")) {
-					
+					Manager_Static.controllerManager.AtackMele ();
 				}
 				if (Input.GetAxisRaw ("Horizontal") == 0.0f && !Input.GetButton ("Fire1")) {
 					Manager_Static.controllerManager.ResetPosition ();
 					Manager_Static.animatorManager.setVelocity (Input.GetAxisRaw ("Horizontal"), 0.0f);
 				}
+				Debug.Log ("Valor de D_Pad: " + Input.GetAxisRaw ("D_Pad_X"));
 			}
 			if (Manager_Static.appManager.currentState == AppState.end_game) {
 			}

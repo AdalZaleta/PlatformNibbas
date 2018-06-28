@@ -325,26 +325,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 114224588070230168, guid: f68100cd77e8e9b418306a4ba340f0af,
-        type: 2}
-      propertyPath: doors.Array.data[0]
-      value: 
-      objectReference: {fileID: 25202717}
-    - target: {fileID: 114279298295929084, guid: f68100cd77e8e9b418306a4ba340f0af,
-        type: 2}
-      propertyPath: Principal_PJ
-      value: 
-      objectReference: {fileID: 1351386578}
-    - target: {fileID: 114303473650258404, guid: f68100cd77e8e9b418306a4ba340f0af,
-        type: 2}
-      propertyPath: Pj_Principal
-      value: 
-      objectReference: {fileID: 1351386579}
     - target: {fileID: 114704742869792800, guid: f68100cd77e8e9b418306a4ba340f0af,
         type: 2}
       propertyPath: cam
       value: 
       objectReference: {fileID: 1255311749}
+    - target: {fileID: 114303473650258404, guid: f68100cd77e8e9b418306a4ba340f0af,
+        type: 2}
+      propertyPath: Pj_Principal
+      value: 
+      objectReference: {fileID: 1351386579}
+    - target: {fileID: 114279298295929084, guid: f68100cd77e8e9b418306a4ba340f0af,
+        type: 2}
+      propertyPath: Principal_PJ
+      value: 
+      objectReference: {fileID: 1351386578}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f68100cd77e8e9b418306a4ba340f0af, type: 2}
   m_IsPrefabParent: 0
