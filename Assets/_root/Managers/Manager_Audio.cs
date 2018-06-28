@@ -13,6 +13,10 @@ namespace TAAI
 		void Awake()
 		{
 			Manager_Static.audioManager = this;
+		}
+
+		void Start()
+		{
 			if (Manager_Static.appManager.currentState == AppState.main_menu)
 				playMusic (main_menu);
 		}
