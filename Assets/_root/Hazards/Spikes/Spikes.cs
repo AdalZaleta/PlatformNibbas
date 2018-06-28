@@ -4,12 +4,30 @@ using UnityEngine;
 
 public class Spikes : MonoBehaviour {
 
+	public enum type
+	{
+		spikes,
+		voidhole
+	}
+
+	public type hazardType;
+
 	void OnCollisionEnter(Collision _col)
 	{
-		if (_col.gameObject.CompareTag("Player"))
+		switch (hazardType)
 		{
-			Debug.Log ("Trigger Player Death");
-			_col.gameObject.SendMessage ("Death", SendMessageOptions.DontRequireReceiver);
+		case type.spikes:
+			if (_col.gameObject.CompareTag ("Player")) {
+				Debug.Log ("Trigger Player Death");
+				_col.gameObject.SendMessage ("Dead", SendMessageOptions.DontRequireReceiver);
+			}
+			break;
+
+		case type.voidhole:
+			if (_col.gameObject.CompareTag ("Player")) {
+				Debug.Log ("Triggered VOID");
+			}
+			break;
 		}
 	}
 }
