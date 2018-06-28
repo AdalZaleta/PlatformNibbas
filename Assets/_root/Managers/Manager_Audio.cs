@@ -13,7 +13,8 @@ namespace TAAI
 		void Awake()
 		{
 			Manager_Static.audioManager = this;
-			playMusic (main_menu);
+			if (Manager_Static.appManager.currentState == AppState.main_menu)
+				playMusic (main_menu);
 		}
 
 		public void playSoundAT (Vector3 pos, AudioClip clip)
