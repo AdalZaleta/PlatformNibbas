@@ -5,7 +5,7 @@ using UnityEngine;
 public class Control_Notes : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
+	void OnEnable () {
 		Invoke ("Desabilitar", 0.4f);
 	}
 
