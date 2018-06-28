@@ -77,7 +77,7 @@ namespace TAAI
 
 		public void Atack()
 		{
-			if (canAtack)
+			if (canAtack) 
 			{
 				Debug.Log ("Input Ataque");
 				StartCoroutine (Trow (DurationShoot));
@@ -140,7 +140,7 @@ namespace TAAI
 			Vector3 currentShootDirection = shootDirection;
 
 			while (Time.time < (currentTime + _duration)) {
-				valueOfTime = Mathf.InverseLerp (currentTime, currentTime + _duration, Time.time);
+				valueOfTime = Mathf.InverseLerp (currentTime, currentTime + _duration, Time.time);	
 				distanceShoot = curvaDeLanzar.Evaluate (valueOfTime);
 				distanceShoot *= LenghtShoot;
 				hitInfo = Physics2D.Raycast (positionShoot, currentShootDirection, distanceShoot, layerCanAtack);
