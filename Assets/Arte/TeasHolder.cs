@@ -89,6 +89,16 @@ namespace TAAI
 			}
 		}
 
+		public void AtackMele()
+		{
+			hitInfo = Physics2D.Raycast (transform.position, shootDirection, distanceShoot, layerCanAtack);
+			if (hitInfo) {
+				Debug.DrawLine (transform.position, hitInfo.point, Color.green);
+			} else {
+				Debug.DrawRay (transform.position, shootDirection, Color.blue);
+			}
+		}
+
 		public void PlayNote(int _note)
 		{
 			PoolManager.Spawn (Notas [_note], offsetMusic [_note], Quaternion.identity);
