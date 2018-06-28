@@ -23,6 +23,10 @@ public class KeyCombo
 					(buttons[currentIndex] == "up" && Input.GetAxisRaw("Vertical") == 1) ||
 					(buttons[currentIndex] == "left" && Input.GetAxisRaw("Horizontal") == -1) ||
 					(buttons[currentIndex] == "right" && Input.GetAxisRaw("Horizontal") == 1) ||
+					(buttons[currentIndex] == "DPadRight" && Input.GetAxisRaw("D_Pad_X") == 1) ||
+					(buttons[currentIndex] == "DPadLeft" && Input.GetAxisRaw("D_Pad_X") == -1) ||
+					(buttons[currentIndex] == "DPadUp" && Input.GetAxisRaw("D_Pad_Y") == 1) ||
+					(buttons[currentIndex] == "DPadDown" && Input.GetAxisRaw("D_Pad_Y") == -1) ||
 					(buttons[currentIndex] == "Right_Trigger" && Input.GetAxisRaw("Right_Trigger") == -1) ||
 					(buttons[currentIndex] != "down" && buttons[currentIndex] != "up" && buttons[currentIndex] != "left" && buttons[currentIndex] != "right" && buttons[currentIndex] != "Right_Trigger" && Input.GetButtonDown(buttons[currentIndex])))
 				{

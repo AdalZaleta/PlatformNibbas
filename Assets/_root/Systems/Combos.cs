@@ -13,8 +13,8 @@ namespace TAAI
 		private KeyCombo easteregg = new KeyCombo(new string[] {"left", "right", "left", "right", "Right_Trigger", "Right_Trigger", "Control_Y"});
 		private KeyCombo OGkonami = new KeyCombo(new string[] {"up", "up", "down", "down", "left", "right", "left", "right", "Control_B", "Control_A", "Control_Start"});
 		private KeyCombo key_0 = new KeyCombo(new string[] {"up", "down", "up"});
-		private KeyCombo key_1 = new KeyCombo(new string[] {"right", "left", "right"});
-		private KeyCombo key_2 = new KeyCombo(new string[] {"up", "down", "right", "left"});
+		private KeyCombo key_1 = new KeyCombo(new string[] {"DPadRight", "DPadLeft", "DPadRight"});
+		private KeyCombo key_2 = new KeyCombo(new string[] {"DPadUp", "DPadDown", "DPadRight", "DPadLeft"});
 
 		public void SetDoorID(string _name)
 		{
