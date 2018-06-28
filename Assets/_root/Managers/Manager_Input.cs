@@ -51,17 +51,17 @@ namespace TAAI
 					Manager_Static.controllerManager.ResetPosition ();
 					Manager_Static.animatorManager.setVelocity (Input.GetAxisRaw ("Horizontal"), 0.0f);
 				}
-				if (Input.GetAxisRaw ("D_Pad_X") == -1) 
+				if (Input.GetAxisRaw ("D_Pad_X") == -1)
 				{
 					Manager_Static.animatorManager.setPlay (true);
 					Manager_Static.controllerManager.PlayNote (0);
 				}
-				if (Input.GetAxisRaw ("D_Pad_X") == 1) 
+				if (Input.GetAxisRaw ("D_Pad_X") == 1)
 				{
 					Manager_Static.animatorManager.setPlay (true);
 					Manager_Static.controllerManager.PlayNote (2);
 				}
-				if (Input.GetAxisRaw ("D_Pad_Y") == 1) 
+				if (Input.GetAxisRaw ("D_Pad_Y") == 1)
 				{
 					Manager_Static.animatorManager.setPlay (true);
 					Manager_Static.controllerManager.PlayNote (1);
