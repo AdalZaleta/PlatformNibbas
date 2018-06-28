@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114224588070230168}
   - component: {fileID: 114279298295929084}
   - component: {fileID: 114303473650258404}
+  - component: {fileID: 114704742869792800}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -91,8 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0b387fd4a99c9418f087a5f7548b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doors:
-  - {fileID: 0}
+  doors: []
 --- !u!114 &114279298295929084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -117,3 +117,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pj_Principal: {fileID: 0}
+--- !u!114 &114704742869792800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1922153965282832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f73b43a6fb569134c9e248e650543276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioDad: {fileID: 1941245782042822, guid: e437ea20de7453e46ae50cbcbe715432, type: 2}
+  cam: {fileID: 0}
+  main_menu: {fileID: 8300000, guid: 1fde48ad53285b249bd98b26880c161a, type: 3}
