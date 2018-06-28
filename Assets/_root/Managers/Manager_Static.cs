@@ -19,7 +19,7 @@ namespace TAAI
 		player2 = 1
 	}
 
-	public static class Manager_Static 
+	public static class Manager_Static
 	{
 		public static Manager_Input inputManager;
 		public static Manager_App appManager;
