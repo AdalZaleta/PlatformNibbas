@@ -8,7 +8,6 @@ public class Render_Active : MonoBehaviour {
 	void Update () {
 		if (transform.localPosition == Vector3.zero) 
 		{
-			Debug.Log ("Entre al if");
 			gameObject.GetComponent<Renderer> ().enabled = false;
 		}
 		if(transform.localPosition != Vector3.zero)
