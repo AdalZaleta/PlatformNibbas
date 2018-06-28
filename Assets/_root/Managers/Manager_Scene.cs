@@ -26,5 +26,10 @@ namespace TAAI
 		{
 			SceneManager.LoadScene (_name);
 		}
+
+		public void ExitApplication()
+		{
+			Application.Quit ();
+		}
 	}
 }
