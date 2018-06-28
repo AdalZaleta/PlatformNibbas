@@ -41,7 +41,17 @@ namespace TAAI
 					Manager_Static.controllerManager.ResetPosition ();
 					Manager_Static.animatorManager.setVelocity (Input.GetAxisRaw ("Horizontal"), 0.0f);
 				}
-				Debug.Log ("Valor de D_Pad: " + Input.GetAxisRaw ("D_Pad_X"));
+				if (Input.GetAxisRaw ("D_Pad_X") == -1) 
+				{
+					Manager_Static.controllerManager.PlayNote (0);
+				}
+				if (Input.GetAxisRaw ("D_Pad_X") == 1) 
+				{
+					Manager_Static.controllerManager.PlayNote (2);
+				}
+				if (Input.GetAxisRaw ("D_Pad_Y") == 1) {
+					Manager_Static.controllerManager.PlayNote (1);
+				}
 			}
 			if (Manager_Static.appManager.currentState == AppState.end_game) {
 			}

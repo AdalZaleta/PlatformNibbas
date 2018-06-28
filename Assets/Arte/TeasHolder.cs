@@ -10,6 +10,7 @@ namespace TAAI
 		public GameObject[] Notas;
 
 		public bool canAtack = true;
+		public bool canplay = true;
 
 		public Sprite[] cosos;
 		public Rigidbody2D what;
@@ -57,6 +58,10 @@ namespace TAAI
 			PoolManager.MakePool (Notas [2], 3, 3, true);
 		}
 
+		void OnDestroy()
+		{
+			PoolManager.ClearPools ();
+		}
 
 		void Update()
 		{
@@ -101,7 +106,10 @@ namespace TAAI
 
 		public void PlayNote(int _note)
 		{
-			PoolManager.Spawn (Notas [_note], offsetMusic [_note], Quaternion.identity);
+			if (canplay) {
+				StartCoroutine (PlayMusic (_note));
+			} else {
+			}
 		}
 
 		public void Move(float _x)
@@ -144,6 +152,14 @@ namespace TAAI
 			Manager_Static.appManager.currentState = AppState.end_game;
 			Health = 0;
 			Manager_Static.sceneManager.LoadSceneName ("Creditos");
+		}
+
+		IEnumerator PlayMusic(int _note)
+		{
+			canplay = false;
+			PoolManager.Spawn (Notas [_note], transform.position + offsetMusic [_note], Quaternion.identity);
+			yield return new WaitForSeconds (0.5f);
+			canplay = true;
 		}
 
 
