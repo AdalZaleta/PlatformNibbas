@@ -64,10 +64,12 @@ namespace TAAI
 				Watch.transform.localPosition = -PosWacher;
 				shootDirection = Vector3.left;
 				who.flipX = true;
+				transform.GetComponent<SpriteRenderer> ().flipX = true;
 			}
 			if (what.velocity.x > 0) {
 				Watch.transform.localPosition = PosWacher;
 				shootDirection = Vector3.right;
+				transform.GetComponent<SpriteRenderer> ().flipX = false;
 				who.flipX = false;
 			}
 			for (int i = 0; i < offsetMusic.Length; i++) {

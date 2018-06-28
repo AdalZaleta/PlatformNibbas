@@ -22,6 +22,7 @@ namespace TAAI
 				if (Input.GetAxis ("Horizontal") != 0.0f) {
 					//Debug.Log (Input.GetAxis ("Horizontal"));
 					Manager_Static.controllerManager.MoveCharacter (Input.GetAxisRaw ("Horizontal"), 0.0f);
+					Manager_Static.animatorManager.setVelocity (Input.GetAxisRaw ("Horizontal"), 0.0f);
 				}
 				if (Input.GetAxis ("Vertical") <= -0.3f) {
 					//Debug.Log (Input.GetAxis ("Horizontal"));
