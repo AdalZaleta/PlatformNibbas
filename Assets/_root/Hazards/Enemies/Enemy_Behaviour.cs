@@ -31,11 +31,11 @@ public class Enemy_Behaviour : MonoBehaviour {
 		spr_w = sprite.gameObject.GetComponent<SpriteRenderer> ().sprite.bounds.size.x * sprite.transform.localScale.x;
 	}
 
-	void OnCollisionEnter(Collision _col)
+	void OnCollisionEnter2D(Collision2D _col)
 	{
 		if (_col.gameObject.CompareTag("Player"))
 		{
-			_col.gameObject.SendMessage ("receiveDamage", SendMessageOptions.DontRequireReceiver);
+			_col.gameObject.SendMessage ("TakeDamage", SendMessageOptions.DontRequireReceiver);
 		}
 	}
 
