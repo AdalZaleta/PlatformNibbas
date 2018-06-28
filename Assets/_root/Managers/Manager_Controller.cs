@@ -44,8 +44,12 @@ namespace TAAI
 
 		public void PlayNote(int _i)
 		{
-			
+			Principal_PJ.GetComponent<TeasHolder> ().PlayNote (_i);
 		}
-			
+
+		public void AtackMele()
+		{
+			Principal_PJ.GetComponent<TeasHolder> ().AtackMele ();
+		}
 	}
 }

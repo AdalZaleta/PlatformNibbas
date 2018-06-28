@@ -91,7 +91,7 @@ namespace TAAI
 
 		public void AtackMele()
 		{
-			hitInfo = Physics2D.Raycast (transform.position, shootDirection, distanceShoot, layerCanAtack);
+			hitInfo = Physics2D.Raycast (transform.position, shootDirection, 1.0f, layerCanAtack);
 			if (hitInfo) {
 				Debug.DrawLine (transform.position, hitInfo.point, Color.green);
 			} else {
