@@ -12,9 +12,9 @@ namespace TAAI
 		private KeyCombo falconKick = new KeyCombo(new string[] {"down", "right","Fire1"});
 		private KeyCombo easteregg = new KeyCombo(new string[] {"left", "right", "left", "right", "Right_Trigger", "Right_Trigger", "Control_Y"});
 		private KeyCombo OGkonami = new KeyCombo(new string[] {"up", "up", "down", "down", "left", "right", "left", "right", "Control_B", "Control_A", "Control_Start"});
-		private KeyCombo key_0 = new KeyCombo(new string[] {"up", "down", "up"});
+		private KeyCombo key_0 = new KeyCombo(new string[] {"DPadUp", "DPadRight", "DPadUp"});
 		private KeyCombo key_1 = new KeyCombo(new string[] {"DPadRight", "DPadLeft", "DPadRight"});
-		private KeyCombo key_2 = new KeyCombo(new string[] {"DPadUp", "DPadDown", "DPadRight", "DPadLeft"});
+		private KeyCombo key_2 = new KeyCombo(new string[] {"DPadRight", "DPadLeft", "DPadUp",});
 
 		public void SetDoorID(string _name)
 		{
@@ -43,15 +43,18 @@ namespace TAAI
 			}
 			if (key_0.Check())
 			{
+				Debug.Log("S U C C -ESS | up down up");
 				Manager_Static.locksManager.UseKey(DoorName, "red_note");
 				//Manager_Static.controllerManager
 			}
 			if (key_1.Check())
 			{
+				Debug.Log("S U C C -ESS | right left right");
 				Manager_Static.locksManager.UseKey (DoorName, "green_note");
 			}
 			if (key_2.Check())
 			{
+				Debug.Log("S U C C -ESS | right left up down");
 				Manager_Static.locksManager.UseKey (DoorName, "blue_note");
 			}
 		}

@@ -19,6 +19,10 @@ namespace TAAI
 			if (Manager_Static.appManager.currentState == AppState.main_menu) {
 			}
 			if (Manager_Static.appManager.currentState == AppState.gameplay) {
+
+				Debug.Log ("DpadX: " + Input.GetAxisRaw ("D_Pad_X"));
+				Debug.Log ("DpadY: " + Input.GetAxisRaw ("D_Pad_Y"));
+
 				if (Input.GetAxis ("Horizontal") != 0.0f) {
 					//Debug.Log (Input.GetAxis ("Horizontal"));
 					Manager_Static.controllerManager.MoveCharacter (Input.GetAxisRaw ("Horizontal"), 0.0f);
