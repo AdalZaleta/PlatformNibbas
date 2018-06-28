@@ -7,6 +7,7 @@ namespace TAAI
 	public class TeasHolder : MonoBehaviour {
 
 		public AudioClip[] SonidosPj;
+		public GameObject[] Notas;
 
 		public bool canAtack = true;
 
@@ -49,6 +50,13 @@ namespace TAAI
 			GOSalto = gameObject.GetComponentInChildren<Transform> ().GetChild (0);
 		}
 
+		void Start()
+		{
+			PoolManager.MakePool (Notas [0], 3, 3, true);
+			PoolManager.MakePool (Notas [1], 3, 3, true);
+			PoolManager.MakePool (Notas [2], 3, 3, true);
+		}
+
 
 		void Update()
 		{
@@ -79,6 +87,11 @@ namespace TAAI
 			{
 				Debug.Log ("Ya esta atacando, Ignora Input");
 			}
+		}
+
+		public void PlayNote(int _note)
+		{
+			PoolManager.Spawn (Notas [_note], offsetMusic [_note], Quaternion.identity);
 		}
 
 		public void Move(float _x)

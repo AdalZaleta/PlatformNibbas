@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -243,9 +243,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 212279100495366068, guid: 98f4aef6688ba894a91f97b3d310288f, type: 2}
-    - {fileID: 60292405884826806, guid: 98f4aef6688ba894a91f97b3d310288f, type: 2}
+    - target: {fileID: 212889985827078114, guid: 98f4aef6688ba894a91f97b3d310288f,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 703ef2a731e51404d9396b3467858c82,
+        type: 3}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 98f4aef6688ba894a91f97b3d310288f, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &663357434
@@ -912,16 +916,26 @@ GameObject:
   m_PrefabParentObject: {fileID: 1863972484505274, guid: 98f4aef6688ba894a91f97b3d310288f,
     type: 2}
   m_PrefabInternal: {fileID: 471975099}
---- !u!95 &1351386579
+--- !u!95 &1351386579 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95398550711775486, guid: 98f4aef6688ba894a91f97b3d310288f,
+    type: 2}
+  m_PrefabInternal: {fileID: 471975099}
+--- !u!1 &1360929476 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1512989329601512, guid: 98f4aef6688ba894a91f97b3d310288f,
+    type: 2}
+  m_PrefabInternal: {fileID: 471975099}
+--- !u!95 &1360929479
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1351386578}
+  m_GameObject: {fileID: 1360929476}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e4dca46a90aeb0f46b0006045d9a2b2e, type: 2}
+  m_Controller: {fileID: 9100000, guid: d93ff4923804d3741a43544e29997d7e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -929,65 +943,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!70 &1351386580
-CapsuleCollider2D:
+--- !u!114 &1360929480
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1351386578}
+  m_GameObject: {fileID: 1360929476}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: a7dd22ab9ecf26843b864804ba22f585, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.07952213, y: -0.053014398}
-  m_Size: {x: 0.8239765, y: 2.083851}
-  m_Direction: 0
---- !u!212 &1351386583
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1351386578}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6e313ea1261dde4469ee4f95e4f83447, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1.65, y: 2.37}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dddb8c7e4a3514042a6894cab5784c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1431148349 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1791602506806774, guid: 98f4aef6688ba894a91f97b3d310288f,
