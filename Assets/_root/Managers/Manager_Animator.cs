@@ -32,5 +32,20 @@ namespace TAAI
 		{
 			Pj_Principal.SetTrigger ("Throw");
 		}
+
+		public void setPlay(bool _isPlaying)
+		{
+			Pj_Principal.SetBool ("Playing", _isPlaying);
+		}
+
+		public void TakeDamage()
+		{
+			Pj_Principal.SetTrigger ("Damage");
+		}
+
+		public void setGrab(bool _isGrab)
+		{
+			Pj_Principal.SetBool ("Grab", _isGrab);
+		}
 	}
 }

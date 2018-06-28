@@ -75,16 +75,27 @@ namespace TAAI
 				shootDirection = Vector3.right;
 				transform.GetComponent<SpriteRenderer> ().flipX = false;
 			}
-			for (int i = 0; i < offsetMusic.Length; i++) {
-				Debug.DrawRay (transform.position, offsetMusic [i], Color.red);
-			}
+		
 			Manager_Static.animatorManager.setJump (gameObject.GetComponent<Rigidbody2D> ().velocity);
+
+			if (Physics2D.Raycast (transform.position + new Vector3 (-0.5f, 0.6f, 0), Vector2.down, 1.4f, layerJump)) {
+				Debug.Log ("Toque por la izquierda");
+				Manager_Static.animatorManager.setGrab (true);
+			}
+			else if (Physics2D.Raycast (transform.position + new Vector3 (0.5f, 0.6f, 0), Vector2.down, 1.4f, layerJump)) {
+				Debug.Log ("Toque por la derecha");
+				Manager_Static.animatorManager.setGrab (true);
+			} else {
+				Debug.Log ("No estoy tocando");
+				Manager_Static.animatorManager.setGrab (false);
+			}
 		}
 
 		public void Atack()
 		{
 			if (canAtack) 
 			{
+				Manager_Static.animatorManager.setThrow ();
 				Debug.Log ("Input Ataque");
 				StartCoroutine (Trow (DurationShoot));
 			}
@@ -141,6 +152,7 @@ namespace TAAI
 
 		public void TakeDamage()
 		{
+			Manager_Static.animatorManager.TakeDamage ();
 			Health -= 1;
 			if (Health <= 0) {
 				Dead ();
@@ -158,7 +170,7 @@ namespace TAAI
 		{
 			canplay = false;
 			PoolManager.Spawn (Notas [_note], transform.position + offsetMusic [_note], Quaternion.identity);
-			yield return new WaitForSeconds (0.5f);
+			yield return new WaitForSeconds (0.3f);
 			canplay = true;
 		}
 
@@ -172,7 +184,7 @@ namespace TAAI
 			Vector3 positionShoot = transform.position;
 			Vector3 currentShootDirection = shootDirection;
 
-			while (Time.time < (currentTime + _duration)) {
+			while (Time.time < (currentTime + _duration - 0.01f)) {
 				valueOfTime = Mathf.InverseLerp (currentTime, currentTime + _duration, Time.time);	
 				distanceShoot = curvaDeLanzar.Evaluate (valueOfTime);
 				distanceShoot *= LenghtShoot;
