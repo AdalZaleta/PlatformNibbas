@@ -27,8 +27,6 @@ public class Enemy_Behaviour : MonoBehaviour {
 	{
 		rig = GetComponent<Rigidbody2D> ();
 		startingPosition = transform.position - new Vector3((distance / 2), (distance / 2), transform.position.z);
-		Debug.Log ("Starting Pos: " + startingPosition);
-		Debug.Log ("Final Pos(x): " + (startingPosition.x + distance));
 
 		spr_w = sprite.gameObject.GetComponent<SpriteRenderer> ().sprite.bounds.size.x * sprite.transform.localScale.x;
 	}
@@ -89,7 +87,6 @@ public class Enemy_Behaviour : MonoBehaviour {
 				floorCheckL = Physics2D.Raycast (transform.position + new Vector3 (-(spr_w/2), 0, 0), Vector2.down, 1.0f, layerMask);
 				if (floorCheckL.collider == null)
 				{
-					Debug.Log ("A la madre una orilla");
 					Debug.DrawRay (transform.position + new Vector3 (-(spr_w / 2), 0, 0), transform.TransformDirection (Vector3.down) * 1.0f, Color.green);
 					StartCoroutine (flip ());
 				}
@@ -114,7 +111,6 @@ public class Enemy_Behaviour : MonoBehaviour {
 				}
 				hitA = Physics2D.Raycast (transform.position, Vector2.up, 1.0f, layerMask);
 				if (hitA.collider != null) {
-					Debug.Log ("HIT");
 					Debug.DrawRay (transform.position, transform.TransformDirection (Vector3.up) * hitA.distance, Color.red);
 					StartCoroutine (flip ());
 				}

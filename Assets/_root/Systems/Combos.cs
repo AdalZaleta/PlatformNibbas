@@ -19,6 +19,7 @@ namespace TAAI
 		public void SetDoorID(string _name)
 		{
 			DoorName = _name;
+			Debug.Log ("New doorname: " + DoorName);
 		}
 
 		void Update () {
@@ -42,18 +43,16 @@ namespace TAAI
 			}
 			if (key_0.Check())
 			{
-				Debug.Log ("Used key key_0");
-				Manager_Static.locksManager.UseKey(DoorName, "key_0");
+				Manager_Static.locksManager.UseKey(DoorName, "red_note");
+				//Manager_Static.controllerManager
 			}
 			if (key_1.Check())
 			{
-				Debug.Log ("Used key key_1");
-				Manager_Static.locksManager.UseKey (DoorName, "key_1");
+				Manager_Static.locksManager.UseKey (DoorName, "green_note");
 			}
 			if (key_2.Check())
 			{
-				Debug.Log ("Used key key_2");
-				Manager_Static.locksManager.UseKey (DoorName, "key_2");
+				Manager_Static.locksManager.UseKey (DoorName, "blue_note");
 			}
 		}
 	}

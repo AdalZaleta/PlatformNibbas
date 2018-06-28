@@ -8,18 +8,22 @@ namespace TAAI
 
 		public string[] keys;
 		public bool[] locks;
+		public GameObject[] notes;
 		public GameObject door;
 		bool doorState = false;
 		bool canTry = false;
 
 		void OnTriggerEnter2D(Collider2D _col)
 		{
-			Debug.Log ("In range to open");
-			canTry = true;
 			if (_col.gameObject.CompareTag("Player"))
 			{
 				_col.gameObject.SendMessage ("SetDoorID", name, SendMessageOptions.DontRequireReceiver);
 			}
+		}
+
+		void OnTriggerStay2D(Collider2D _col)
+		{
+			canTry = true;
 		}
 
 		void OnTriggerExit2D(Collider2D _col)
@@ -30,14 +34,17 @@ namespace TAAI
 
 		public void unLock(string lockname)
 		{
+			Debug.Log ("Entered unLock");
 			if (canTry) 
 			{
-				Debug.Log ("Unlocking " + lockname);
+				Debug.Log ("Can Try = true");
 				for (int i = 0; i < locks.Length; i++) 
 				{
-					Debug.Log ("Obj: " + lockname + " | key[" + i + "]: " + keys [i]);
-					if (keys [i] == lockname) {
+					Debug.Log (keys [i] + " = " + lockname);
+					if (keys[i] == lockname) {
+						Debug.Log ("UNLOCKED : " + keys [i] + " | " + i);
 						locks [i] = true;
+						notes [i].GetComponent<SpriteRenderer> ().color = Color.black;
 					}
 				}
 				checkLocks ();
@@ -63,7 +70,11 @@ namespace TAAI
 			{
 				Debug.Log ("Door is now Opened");
 				door.GetComponent<BoxCollider2D> ().enabled = false;
-				door.GetComponent<SpriteRenderer> ().color = new Color (255, 255, 255, 0.5f);
+				door.GetComponent<SpriteRenderer> ().color = new Color (1.0f, 1.0f, 1.0f, 0.5f);
+				for (int i = 0; i < notes.Length; i++)
+				{
+					notes [i].SetActive (false);
+				}
 			}
 		}
 	}

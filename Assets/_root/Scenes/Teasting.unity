@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -120,7 +120,7 @@ GameObject:
   m_PrefabInternal: {fileID: 778305159}
 --- !u!1 &65401624
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 8
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
@@ -135,7 +135,7 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &65401625
 Transform:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 8
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 65401624}
@@ -156,11 +156,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4981821467686864, guid: 98f4aef6688ba894a91f97b3d310288f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -21.31
+      value: 16.34
       objectReference: {fileID: 0}
     - target: {fileID: 4981821467686864, guid: 98f4aef6688ba894a91f97b3d310288f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.97
+      value: -0.79
       objectReference: {fileID: 0}
     - target: {fileID: 4981821467686864, guid: 98f4aef6688ba894a91f97b3d310288f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -422,7 +422,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4781264206391276, guid: a3b2b60e0593ebc44b0670c0d4eb93e4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.51
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: 4781264206391276, guid: a3b2b60e0593ebc44b0670c0d4eb93e4, type: 2}
       propertyPath: m_LocalPosition.z
@@ -560,7 +560,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!1 &826387162
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 8
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
@@ -576,7 +576,7 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &826387163
 Transform:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 8
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 826387162}
@@ -589,7 +589,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &826387164
 SpriteRenderer:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 8
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 826387162}
@@ -895,6 +895,54 @@ MonoBehaviour:
   shakeDuration: 1
   smooth: 1
   smoothAmount: 5
+--- !u!1 &1267763958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1267763960}
+  - component: {fileID: 1267763959}
+  m_Layer: 0
+  m_Name: QHierarchyObjectList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1267763959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1267763958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 845e8bd83609e3549af5a311ad811681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockedObjects:
+  - {fileID: 65401624}
+  - {fileID: 826387162}
+  editModeVisibileObjects: []
+  editModeInvisibleObjects: []
+  wireframeHiddenObjects: []
+  gameObjectColorKeys: []
+  gameObjectColorValues: []
+--- !u!4 &1267763960
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1267763958}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1351386578 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1863972484505274, guid: 98f4aef6688ba894a91f97b3d310288f,

@@ -30,7 +30,6 @@ namespace TAAI
 
 		void ChangeTarget(GameObject _col)
 		{
-			Debug.Log ("Entered Change with: " + _col.gameObject.name);
 			if (_col.gameObject.CompareTag("camFix"))
 			{
 				defTarget = false;
