@@ -6,10 +6,11 @@ namespace TAAI
 {
 	public class TeasHolder : MonoBehaviour {
 
+		public AudioClip[] SonidosPj;
+
 		public bool canAtack = true;
 
 		public Sprite[] cosos;
-		public SpriteRenderer who;
 		public Rigidbody2D what;
 		public Transform Watch;
 		public Transform GOSalto;
@@ -51,30 +52,20 @@ namespace TAAI
 
 		void Update()
 		{
-			if (what.velocity.y < 0) {
-				who.sprite = cosos [0];
-			}
-			if (what.velocity.y > 0.1) {
-				who.sprite = cosos [2];
-			}
-			if (what.velocity.y == 0 && what.velocity.x == 0) {
-				who.sprite = cosos [1];
-			}
 			if (what.velocity.x < 0) {
 				Watch.transform.localPosition = -PosWacher;
 				shootDirection = Vector3.left;
-				who.flipX = true;
 				transform.GetComponent<SpriteRenderer> ().flipX = true;
 			}
 			if (what.velocity.x > 0) {
 				Watch.transform.localPosition = PosWacher;
 				shootDirection = Vector3.right;
 				transform.GetComponent<SpriteRenderer> ().flipX = false;
-				who.flipX = false;
 			}
 			for (int i = 0; i < offsetMusic.Length; i++) {
 				Debug.DrawRay (transform.position, offsetMusic [i], Color.red);
 			}
+			Manager_Static.animatorManager.setJump (gameObject.GetComponent<Rigidbody2D> ().velocity);
 		}
 
 		public void Atack()
@@ -136,6 +127,7 @@ namespace TAAI
 		IEnumerator Trow(float _duration)
 		{
 			Debug.Log ("Entre a la corrutina");
+			Manager_Static.animatorManager.setThrow ();
 			canAtack = false;
 			float currentTime = Time.time;
 			Vector3 positionShoot = transform.position;
@@ -152,9 +144,9 @@ namespace TAAI
 					Debug.DrawRay (positionShoot, currentShootDirection, Color.blue);
 				}
 				Weapon.position = positionShoot + currentShootDirection * distanceShoot;
-				Weapon.localPosition = Vector3.zero;
 				yield return null;
 			}
+			Weapon.localPosition = Vector3.zero;
 			canAtack = true;
 			Debug.Log ("Sale de la corrutina");
 		}

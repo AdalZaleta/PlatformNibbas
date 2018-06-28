@@ -17,5 +17,20 @@ namespace TAAI
 		{
 			Pj_Principal.SetFloat ("Walking", _x);
 		}
+
+		public void setJump(Vector2 _velocity)
+		{
+			Pj_Principal.SetFloat ("Jump", _velocity.y);
+		}
+
+		public void setAtacck()
+		{
+			Pj_Principal.SetTrigger ("Mele");
+		}
+
+		public void setThrow()
+		{
+			Pj_Principal.SetTrigger ("Throw");
+		}
 	}
 }
