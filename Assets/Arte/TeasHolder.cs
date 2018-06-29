@@ -154,9 +154,11 @@ namespace TAAI
 			Manager_Static.audioManager.playSoundGlobal (SonidosPj[0]);
 			Manager_Static.animatorManager.TakeDamage ();
 			Health -= 1;
+			Manager_Static.uiManager.UpdateHPGraphic (Health);
 			if (Health <= 0) {
 				Dead ();
 			}
+
 		}
 
 		private void Dead()
@@ -164,6 +166,13 @@ namespace TAAI
 			Manager_Static.audioManager.playSoundGlobal (SonidosPj[1]);
 			Manager_Static.appManager.currentState = AppState.end_game;
 			Health = 0;
+			Manager_Static.uiManager.UpdateHPGraphic (Health);
+			StartCoroutine (Credits ());
+		}
+
+		IEnumerator Credits()
+		{
+			yield return new WaitForSeconds (2.5f);
 			Manager_Static.sceneManager.LoadSceneName ("Creditos");
 		}
 

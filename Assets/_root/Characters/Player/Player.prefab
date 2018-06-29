@@ -256,7 +256,7 @@ MonoBehaviour:
   what: {fileID: 50998780307696304}
   Watch: {fileID: 4440869598615540}
   GOSalto: {fileID: 4994928067526690}
-  Health: 5
+  Health: 3
   layerJump:
     serializedVersion: 2
     m_Bits: 256
