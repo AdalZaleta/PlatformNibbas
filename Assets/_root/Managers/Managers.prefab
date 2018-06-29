@@ -58,6 +58,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6559c52917522e4eb70b53fdc81ad06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx:
+  - {fileID: 8300000, guid: 1a554b56b5c466840af8e75c14d22e3d, type: 3}
+  - {fileID: 8300000, guid: bc9b5aeb6a5a2774ea96ac79a673ea7c, type: 3}
 --- !u!114 &114148443637077154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c5cbdfebf98284aae4b2e9bf59ec39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 1
+  currentState: 0
 --- !u!114 &114183654154929710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -106,7 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6230f8410228d3e4698ac187cf53eee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Principal_PJ: {fileID: 0}
+  Principal_PJ: {fileID: 1863972484505274, guid: 98f4aef6688ba894a91f97b3d310288f,
+    type: 2}
 --- !u!114 &114303473650258404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,7 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce782e81fc3f302468297e01912fd9b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pj_Principal: {fileID: 0}
+  Pj_Principal: {fileID: 95398550711775486, guid: 98f4aef6688ba894a91f97b3d310288f,
+    type: 2}
 --- !u!114 &114704742869792800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -132,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioDad: {fileID: 1941245782042822, guid: e437ea20de7453e46ae50cbcbe715432, type: 2}
   cam: {fileID: 0}
-  main_menu: {fileID: 8300000, guid: 1fde48ad53285b249bd98b26880c161a, type: 3}
+  main_menu: {fileID: 8300000, guid: 097791e597841bc408e22011717d131e, type: 3}
 --- !u!114 &114875522759035142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,3 +150,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pausa: {fileID: 0}
+  Hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  heart_spr:
+  - {fileID: 21300000, guid: 9ac89e6f68d82b3489eb35454daa82e9, type: 3}
+  - {fileID: 21300000, guid: c9c44e07ebd043e46acc37016a424d48, type: 3}

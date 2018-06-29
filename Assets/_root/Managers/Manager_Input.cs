@@ -8,6 +8,8 @@ namespace TAAI
 {
 	public class Manager_Input : MonoBehaviour {
 
+		public AudioClip[] sfx;
+
 		void Awake()
 		{
 			Manager_Static.inputManager = this;
@@ -23,6 +25,14 @@ namespace TAAI
 				}
 			}
 			else if (Manager_Static.appManager.currentState == AppState.main_menu) {
+				if (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("Fire1"))
+				{
+					Manager_Static.audioManager.playSoundGlobal (sfx [1]);
+				}
+				else if (Input.anyKeyDown /*&& !(Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("Fire1"))*/)
+				{
+					Manager_Static.audioManager.playSoundGlobal (sfx [0]);
+				}
 			}
 			else if (Manager_Static.appManager.currentState == AppState.gameplay) {
 				if (Input.GetAxis ("Horizontal") != 0.0f) {
