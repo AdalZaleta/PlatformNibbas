@@ -93,6 +93,7 @@ namespace TAAI
 		{
 			if (canAtack) 
 			{
+				Manager_Static.audioManager.playSoundGlobal (SonidosPj [2]);
 				Manager_Static.animatorManager.setThrow ();
 				Debug.Log ("Input Ataque");
 				StartCoroutine (Trow (DurationShoot));
@@ -105,6 +106,7 @@ namespace TAAI
 
 		public void AtackMele()
 		{
+			Manager_Static.audioManager.playSoundGlobal (SonidosPj [3]);
 			hitInfo = Physics2D.Raycast (transform.position, shootDirection, 1.0f, layerCanAtack);
 			if (hitInfo) {
 				hitInfo.transform.SendMessage ("TakeDamage", SendMessageOptions.DontRequireReceiver);
@@ -130,6 +132,7 @@ namespace TAAI
 			if (Physics2D.Raycast (originJump, Vector2.right, 0.3f, layerJump)) {
 				Debug.DrawRay (originJump, Vector2.right * 0.5f, Color.black, 2);
 				Debug.Log("Toque");
+				Manager_Static.audioManager.playSoundGlobal (SonidosPj [4]);
 				gameObject.GetComponent <Rigidbody2D> ().velocity = Vector2.up * PotenciaSalto;
 			}
 		}
@@ -148,6 +151,7 @@ namespace TAAI
 
 		public void TakeDamage()
 		{
+			Manager_Static.audioManager.playSoundGlobal (SonidosPj[0]);
 			Manager_Static.animatorManager.TakeDamage ();
 			Health -= 1;
 			if (Health <= 0) {
@@ -157,6 +161,7 @@ namespace TAAI
 
 		private void Dead()
 		{
+			Manager_Static.audioManager.playSoundGlobal (SonidosPj[1]);
 			Manager_Static.appManager.currentState = AppState.end_game;
 			Health = 0;
 			Manager_Static.sceneManager.LoadSceneName ("Creditos");
@@ -164,6 +169,8 @@ namespace TAAI
 
 		IEnumerator PlayMusic(int _note)
 		{
+			int index = Random.Range (5, SonidosPj.Length);
+			Manager_Static.audioManager.playSoundAT (transform.position, SonidosPj[index]);
 			canplay = false;
 			PoolManager.Spawn (Notas [_note], transform.position + offsetMusic [_note], Quaternion.identity);
 			yield return new WaitForSeconds (0.3f);
