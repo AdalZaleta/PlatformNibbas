@@ -18,6 +18,7 @@ public class Enemy_Behaviour : MonoBehaviour {
 	public LayerMask layerMask;
 	Rigidbody2D rig;
 	Vector3 startingPosition;
+	public float HP;
 
 	float spr_w;
 
@@ -37,6 +38,18 @@ public class Enemy_Behaviour : MonoBehaviour {
 		{
 			_col.gameObject.SendMessage ("TakeDamage", SendMessageOptions.DontRequireReceiver);
 		}
+	}
+
+	void TakeDamage(float dmg)
+	{
+		HP -= dmg;
+		if (HP <= 0)
+			Death ();
+	}
+
+	void Death()
+	{
+		Destroy (gameObject);
 	}
 
 	void Update()
