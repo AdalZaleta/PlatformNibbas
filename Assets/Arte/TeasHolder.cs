@@ -79,11 +79,9 @@ namespace TAAI
 			Manager_Static.animatorManager.setJump (gameObject.GetComponent<Rigidbody2D> ().velocity);
 
 			if (Physics2D.Raycast (transform.position + new Vector3 (-0.5f, 0.6f, 0), Vector2.down, 1.4f, layerJump)) {
-				Debug.Log ("Toque por la izquierda");
 				Manager_Static.animatorManager.setGrab (true);
 			}
 			else if (Physics2D.Raycast (transform.position + new Vector3 (0.5f, 0.6f, 0), Vector2.down, 1.4f, layerJump)) {
-				Debug.Log ("Toque por la derecha");
 				Manager_Static.animatorManager.setGrab (true);
 			} else {
 				Debug.Log ("No estoy tocando");
@@ -110,10 +108,8 @@ namespace TAAI
 		{
 			Manager_Static.audioManager.playSoundGlobal (SonidosPj [3]);
 			hitInfo = Physics2D.Raycast (transform.position, shootDirection, 1.0f, layerCanAtack);
-			if (hitInfo) {
-				Debug.DrawLine (transform.position, hitInfo.point, Color.green);
-			} else {
-				Debug.DrawRay (transform.position, shootDirection, Color.blue);
+			if (hitInfo.transform.CompareTag("Enemy")) {
+				hitInfo.transform.SendMessage ("TakeDamage", SendMessageOptions.DontRequireReceiver);
 			}
 		}
 
@@ -197,9 +193,8 @@ namespace TAAI
 				distanceShoot *= LenghtShoot;
 				hitInfo = Physics2D.Raycast (positionShoot, currentShootDirection, distanceShoot, layerCanAtack);
 				if (hitInfo) {
+					hitInfo.transform.SendMessage ("TakeDamage", SendMessageOptions.DontRequireReceiver);
 					Debug.DrawLine (positionShoot, hitInfo.point, Color.green);
-				} else {
-					Debug.DrawRay (positionShoot, currentShootDirection, Color.blue);
 				}
 				Weapon.position = positionShoot + currentShootDirection * distanceShoot;
 				yield return null;

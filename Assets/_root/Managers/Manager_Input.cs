@@ -19,6 +19,7 @@ namespace TAAI
 			if (Manager_Static.appManager.currentState == AppState.pause_menu) {
 				if (Input.GetKeyUp (KeyCode.JoystickButton7)) {
 					Manager_Static.appManager.setPlay ();
+					Manager_Static.uiManager.isInPause (false);
 				}
 			}
 			else if (Manager_Static.appManager.currentState == AppState.main_menu) {
@@ -68,6 +69,7 @@ namespace TAAI
 				}
 				if (Input.GetKeyUp (KeyCode.JoystickButton7)) {
 					Manager_Static.appManager.SetPause ();
+					Manager_Static.uiManager.isInPause (true);
 				}
 			}
 			else if (Manager_Static.appManager.currentState == AppState.end_game) {
