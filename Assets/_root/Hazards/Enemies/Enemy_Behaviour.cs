@@ -12,6 +12,7 @@ public enum enemyType
 public class Enemy_Behaviour : MonoBehaviour {
 
 	public enemyType type;
+	public int Health;
 	public float distance;
 	public float speed;
 	public GameObject sprite;
@@ -22,6 +23,28 @@ public class Enemy_Behaviour : MonoBehaviour {
 	float spr_w;
 
 	bool coolDown;
+
+	public void TakeDamage()
+	{
+		gameObject.GetComponent<Animator> ().SetTrigger ("Hit");
+		Health--;
+		if(Health <= 0)
+		{
+			Dead ();
+		}
+	}
+
+	public void Dead()
+	{
+		gameObject.GetComponent<Animator> ().SetBool ("Muerto", true);
+		StartCoroutine (Desaparecer ());
+	}
+
+	IEnumerator Desaparecer()
+	{
+		yield return new WaitForSeconds (1.0f);
+		gameObject.SetActive (false);
+	}
 
 	void Start()
 	{
@@ -35,6 +58,7 @@ public class Enemy_Behaviour : MonoBehaviour {
 	{
 		if (_col.gameObject.CompareTag("Player"))
 		{
+			gameObject.GetComponent<Animator> ().SetTrigger ("Atack");
 			_col.gameObject.SendMessage ("TakeDamage", SendMessageOptions.DontRequireReceiver);
 		}
 	}
