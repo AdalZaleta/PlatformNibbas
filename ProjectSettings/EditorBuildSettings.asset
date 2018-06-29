@@ -4,4 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_root/Scenes/Main title.unity
+    guid: 26c6e3452b2cf9142889e39d2be57526
+  - enabled: 1
+    path: Assets/_root/Scenes/About.unity
+    guid: 8faac57c1fcdb3840a58848e88d00b0b
+  - enabled: 1
+    path: Assets/Arte/Timmothy/Lvl.unity
+    guid: c2de8f8a307d28449a300977cdd74eb1
+  - enabled: 1
+    path: Assets/Arte/Timmothy/cueva.unity
+    guid: e0abf0508c59a3c4fb93a712ad0821b4
