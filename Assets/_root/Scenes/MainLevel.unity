@@ -487,6 +487,71 @@ Animator:
   m_PrefabParentObject: {fileID: 95398550711775486, guid: 98f4aef6688ba894a91f97b3d310288f,
     type: 2}
   m_PrefabInternal: {fileID: 1139959197}
+--- !u!1001 &133950636
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4540546236174418, guid: e468b10029785c146b39126147e65665, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.75187904
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540546236174418, guid: e468b10029785c146b39126147e65665, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 7.789441
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540546236174418, guid: e468b10029785c146b39126147e65665, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.296875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540546236174418, guid: e468b10029785c146b39126147e65665, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540546236174418, guid: e468b10029785c146b39126147e65665, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540546236174418, guid: e468b10029785c146b39126147e65665, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540546236174418, guid: e468b10029785c146b39126147e65665, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540546236174418, guid: e468b10029785c146b39126147e65665, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e468b10029785c146b39126147e65665, type: 2}
+  m_IsPrefabParent: 0
+--- !u!114 &133950637 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114746112626119370, guid: e468b10029785c146b39126147e65665,
+    type: 2}
+  m_PrefabInternal: {fileID: 133950636}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &133950638 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114801010900663652, guid: e468b10029785c146b39126147e65665,
+    type: 2}
+  m_PrefabInternal: {fileID: 133950636}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &133950639 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114125353750863044, guid: e468b10029785c146b39126147e65665,
+    type: 2}
+  m_PrefabInternal: {fileID: 133950636}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &133950640 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1614656695859846, guid: e468b10029785c146b39126147e65665,
+    type: 2}
+  m_PrefabInternal: {fileID: 133950636}
 --- !u!1 &142229041
 GameObject:
   m_ObjectHideFlags: 0
@@ -7216,6 +7281,26 @@ Prefab:
       propertyPath: Pj_Principal
       value: 
       objectReference: {fileID: 119358577}
+    - target: {fileID: 114875522759035142, guid: f68100cd77e8e9b418306a4ba340f0af,
+        type: 2}
+      propertyPath: Hearts.Array.data[0]
+      value: 
+      objectReference: {fileID: 133950639}
+    - target: {fileID: 114875522759035142, guid: f68100cd77e8e9b418306a4ba340f0af,
+        type: 2}
+      propertyPath: Hearts.Array.data[1]
+      value: 
+      objectReference: {fileID: 133950638}
+    - target: {fileID: 114875522759035142, guid: f68100cd77e8e9b418306a4ba340f0af,
+        type: 2}
+      propertyPath: Hearts.Array.data[2]
+      value: 
+      objectReference: {fileID: 133950637}
+    - target: {fileID: 114875522759035142, guid: f68100cd77e8e9b418306a4ba340f0af,
+        type: 2}
+      propertyPath: Pausa
+      value: 
+      objectReference: {fileID: 133950640}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f68100cd77e8e9b418306a4ba340f0af, type: 2}
   m_IsPrefabParent: 0
