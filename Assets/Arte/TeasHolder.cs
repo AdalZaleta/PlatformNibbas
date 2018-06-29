@@ -173,7 +173,7 @@ namespace TAAI
 		IEnumerator Credits()
 		{
 			yield return new WaitForSeconds (2.5f);
-			Manager_Static.sceneManager.LoadSceneName ("Creditos");
+			Manager_Static.sceneManager.LoadSceneName ("MainTitle");
 		}
 
 		IEnumerator PlayMusic(int _note)

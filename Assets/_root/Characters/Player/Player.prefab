@@ -114,7 +114,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1863972484505274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.34, y: -0.79, z: 0.012879949}
+  m_LocalPosition: {x: -3.34, y: -0.02, z: 0.012879949}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4994928067526690}
@@ -307,7 +307,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  PotenciaSalto: 8
+  PotenciaSalto: 9
   PotenciaCaida: 16
   valueOfTime: 0
   distanceShoot: 0
