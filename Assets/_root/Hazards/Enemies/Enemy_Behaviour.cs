@@ -27,7 +27,7 @@ public class Enemy_Behaviour : MonoBehaviour {
 
 	public void TakeDamage()
 	{
-		gameObject.GetComponent<Animator> ().SetTrigger ("Hit");
+		gameObject.GetComponentInChildren<Animator> ().SetTrigger ("Hit");
 		Health--;
 		if(Health <= 0)
 		{
@@ -37,7 +37,7 @@ public class Enemy_Behaviour : MonoBehaviour {
 
 	public void Dead()
 	{
-		gameObject.GetComponent<Animator> ().SetBool ("Muerto", true);
+		gameObject.GetComponentInChildren<Animator> ().SetBool ("Muerto", true);
 		StartCoroutine (Desaparecer ());
 	}
 
@@ -59,7 +59,7 @@ public class Enemy_Behaviour : MonoBehaviour {
 	{
 		if (_col.gameObject.CompareTag("Player"))
 		{
-			gameObject.GetComponent<Animator> ().SetTrigger ("Atack");
+			gameObject.GetComponentInChildren<Animator> ().SetTrigger ("Atack");
 			_col.gameObject.SendMessage ("TakeDamage", SendMessageOptions.DontRequireReceiver);
 		}
 	}

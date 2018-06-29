@@ -106,7 +106,7 @@ namespace TAAI
 		public void AtackMele()
 		{
 			hitInfo = Physics2D.Raycast (transform.position, shootDirection, 1.0f, layerCanAtack);
-			if (hitInfo.transform.CompareTag("Enemy")) {
+			if (hitInfo) {
 				hitInfo.transform.SendMessage ("TakeDamage", SendMessageOptions.DontRequireReceiver);
 			}
 		}
